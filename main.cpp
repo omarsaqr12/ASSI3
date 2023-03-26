@@ -59,7 +59,7 @@ while (!b.eof()){
     customers[o].set_name(Name); 
     customers[o].set_age(Age); 
     int cur=0; 
-    for (int l=0; l<Size; l++){ 
+    for (int l=(o)%4; l<Size; l++){ 
         if (mechanics[l].isavailable(app)){ 
         customers[o].setappointment(app); 
         mechanics[l].setappointments(app); 
