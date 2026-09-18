@@ -1,17 +1,19 @@
-#ifndef TEMPLATE
-#define TEMPLATE
-template <class T>
+#ifndef ASSI3_TEMPLATE_H
+#define ASSI3_TEMPLATE_H
 
-class queue
-{
-    T *arr;         // array to store queue elements
-    int capacity = 15;   // capacity of the queue
-    int front;      // front points to the first element in the queue 
-    int rear;       // rear points to the last element in the queue
-    int count;      // current size of the queue
- 
+template <class T>
+class queue {
+    T* arr;
+    int capacity;
+    int front;
+    int rear;
+    int count;
+
 public:
-    queue(int size = 15);
+    explicit queue(int size = 15);
+    ~queue();
+    queue(const queue&) = delete;
+    queue& operator=(const queue&) = delete;
     void pop();
     void push(T);
     T peek();
@@ -19,4 +21,5 @@ public:
     bool isEmpty();
     bool isFull();
 };
+
 #endif
