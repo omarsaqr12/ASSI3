@@ -1,25 +1,20 @@
-#ifndef MECHANIC
-#define MECHANIC
-#include <iostream>
+#ifndef ASSI3_MECHANIC_H
+#define ASSI3_MECHANIC_H
+
 #include "person.h"
-class mechanic : public person{// we inherit publicily from class person
+
+class mechanic : public person {
 private:
-int counter;// we declare th counter
-appointment apps[24]; //assume a max of 24 appointments per day for each mechanic
+    int counter = 0;
+    appointment apps[24]{}; // Exercise limit: at most 24 exact-time appointments.
 
 public:
-mechanic();
-
-bool isavailable(appointment);
-
-void setappointments(appointment );
-
-int getcounter();
-
-appointment getappointment();
-void print();
+    mechanic();
+    bool isavailable(appointment);
+    void setappointments(appointment);
+    int getcounter();
+    appointment getappointment();
+    void print() override;
 };
-
-
 
 #endif
